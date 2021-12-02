@@ -130,7 +130,7 @@ export const product_feedback_reducer = (state, action) => {
             return {
                 ...state,
                 filtered_products_feedbacks: state.products_feedbacks.sort(
-                    (a, b) => a.up_votes < b.up_votes
+                    (a, b) => b.up_votes - a.up_votes
                 ),
             }
         }
@@ -139,7 +139,7 @@ export const product_feedback_reducer = (state, action) => {
             filtered_products_feedbacks: state.products_feedbacks.filter(
                 item => item.category === action.payload
             ).sort(
-                (a, b) => a.up_votes < b.up_votes
+                (a, b) => b.up_votes - a.up_votes
             )
         }
     }
@@ -150,16 +150,16 @@ export const product_feedback_reducer = (state, action) => {
         ]
 
         if (action.payload === 'Most Upvotes') {
-            tempSort = tempSort.sort((a, b) => a.up_votes < b.up_votes)
+            tempSort = tempSort.sort((a, b) => b.up_votes - a.up_votes)
         }
         if (action.payload === 'Least Upvotes') {
-            tempSort = tempSort.sort((a, b) => a.up_votes > b.up_votes)
+            tempSort = tempSort.sort((a, b) => a.up_votes - b.up_votes)
         }
         if (action.payload === 'Most Comments') {
-            tempSort = tempSort.sort((a, b) => a.comments < b.comments)
+            tempSort = tempSort.sort((a, b) => b.comments.length - a.comments.length)
         }
         if (action.payload === 'Least Comments') {
-            tempSort = tempSort.sort((a, b) => a.comments > b.comments)
+            tempSort = tempSort.sort((a, b) => a.comments.length - b.comments.length)
         }
         return {
             ...state,

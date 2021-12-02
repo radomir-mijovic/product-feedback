@@ -17,11 +17,10 @@ const Header = () => {
     const history = useHistory()
 
     const nameHandler = (index, e) => {
-        e.preventDefault()
+        sortBy(e.target.textContent)
         setIsActive(index)
         setNameIndex(index)
         setSort(false)
-        sortBy(e.target.textContent)
     }
 
     const addFeedbackHandler = (e) => {
