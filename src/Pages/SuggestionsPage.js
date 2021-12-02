@@ -49,7 +49,7 @@ const SuggestionsPage = () => {
 };
 
 const SuggestionsPageWrapper = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;

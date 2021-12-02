@@ -113,6 +113,7 @@ export const HeaderWrapper = styled.div`
       position: relative;
       width: 160px;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
 
       .most {
         font-weight: 700;

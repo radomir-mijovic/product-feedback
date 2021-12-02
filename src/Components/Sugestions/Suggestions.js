@@ -44,6 +44,7 @@ export const SuggestionStyled = styled.div`
   position: relative;
   padding: 32px 28px;
   margin-bottom: 20px;
+  -webkit-tap-highlight-color: transparent;
 
   .right-side {
     display: flex;

@@ -150,16 +150,24 @@ export const product_feedback_reducer = (state, action) => {
         ]
 
         if (action.payload === 'Most Upvotes') {
-            tempSort = tempSort.sort((a, b) => b.up_votes - a.up_votes)
+            tempSort = tempSort.sort(
+                (a, b) => b.up_votes - a.up_votes
+            )
         }
         if (action.payload === 'Least Upvotes') {
-            tempSort = tempSort.sort((a, b) => a.up_votes - b.up_votes)
+            tempSort = tempSort.sort(
+                (a, b) => a.up_votes - b.up_votes
+            )
         }
         if (action.payload === 'Most Comments') {
-            tempSort = tempSort.sort((a, b) => b.comments.length - a.comments.length)
+            tempSort = tempSort.sort(
+                (a, b) => b.comments.length - a.comments.length
+            )
         }
         if (action.payload === 'Least Comments') {
-            tempSort = tempSort.sort((a, b) => a.comments.length - b.comments.length)
+            tempSort = tempSort.sort(
+                (a, b) => a.comments.length - b.comments.length
+            )
         }
         return {
             ...state,

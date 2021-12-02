@@ -7,6 +7,7 @@ import RoadMapFeedbacks from "../Components/Roadmap/RoadMapFeedbacks";
 import RoadmapNavbarMobile from "../Components/Roadmap/RoadmapNavbarMobile";
 import {useProductFeedbackContext} from "../Components/context/product_feedback_context";
 import NoSuggestions from "../Components/Sugestions/NoSuggestions";
+import {useHistory} from "react-router-dom";
 
 const RoadmapPage = () => {
     const {
@@ -14,6 +15,12 @@ const RoadmapPage = () => {
         in_progress_feedbacks,
         live_feedbacks
     } = useProductFeedbackContext()
+    const history = useHistory()
+
+    const addFeedbackHandler = (e) => {
+        e.preventDefault()
+        history.push('/new-feedback')
+    }
 
 
     return (
@@ -29,8 +36,9 @@ const RoadmapPage = () => {
                     <h1>Roadmap</h1>
                 </LeftSide>
                 <Button
+                    onClick={e => addFeedbackHandler(e)}
                     height={'44px'}
-                    width={'158px'}
+                    width={'160px'}
                 >
                     + Add Feedback
                 </Button>

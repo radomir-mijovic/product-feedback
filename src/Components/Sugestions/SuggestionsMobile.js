@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   padding-top: 24px;
   padding-left: ${props => props.padding || '24px'};
   padding-right: ${props => props.padding || '24px'};
+  -webkit-tap-highlight-color: transparent;
 
   .suggestion {
     width: 100%;
