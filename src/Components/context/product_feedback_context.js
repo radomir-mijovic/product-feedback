@@ -27,13 +27,13 @@ export const ProductFeedbackProvider = ({children}) => {
 
     const planned_feedbacks = state.products_feedbacks.filter(
         item => item.status === 'Planned'
-    ).sort((a, b) => a.up_votes < b.up_votes)
+    ).sort((a, b) => b.up_votes - a.up_votes)
     const in_progress_feedbacks = state.products_feedbacks.filter(
         item => item.status === 'In-Progress'
-    ).sort((a, b) => a.up_votes < b.up_votes)
+    ).sort((a, b) => b.up_votes - a.up_votes)
     const live_feedbacks = state.products_feedbacks.filter(
         item => item.status === 'Live'
-    ).sort((a, b) => a.up_votes < b.up_votes)
+    ).sort((a, b) => b.up_votes - a.up_votes)
 
     const ProductFeedbackList = async () => {
         try {
